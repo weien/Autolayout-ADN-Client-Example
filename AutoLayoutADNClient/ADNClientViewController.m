@@ -74,14 +74,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"ADNCell";
     CustomADNCell *cell = [self.ADNTableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[CustomADNCell alloc]
-                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
+
+    //the following isn't necessary -- "Because the prototype cell is defined in a storyboard" (see Table View Programming Guide for iOS)
+//    if (cell == nil) {
+//        cell = [[CustomADNCell alloc]
+//                initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
   
     NSDictionary* postForCell = self.ADNDataSource[[indexPath row]];    
     [cell configureForPost:postForCell];
-
+    
     return cell;
 }
 

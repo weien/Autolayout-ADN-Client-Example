@@ -33,7 +33,6 @@
     
     //cell.posterNameLabel.layer.borderWidth = 1;
     //cell.postTextLabel.layer.borderWidth = 1;
-
 }
 
 - (void)prepareForReuse {
